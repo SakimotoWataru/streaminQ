@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="104.74402mm"
+   height="13.314638mm"
+   viewBox="0 0 104.74402 13.314638"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="SQlogo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="1.0242632"
+     inkscape:cx="5.3697135"
+     inkscape:cy="104.95349"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       id="grid5"
+       units="mm"
+       originx="-78.871616"
+       originy="-93.19483"
+       spacingx="0.99999998"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-78.871615,-93.194828)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.9333px;font-family:'Atkinson Hyperlegible';-inkscape-font-specification:'Atkinson Hyperlegible Bold';fill:#ffffff;fill-opacity:0.981685;stroke-width:0.587999"
+       x="88.771217"
+       y="106.30627"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Atkinson Hyperlegible';-inkscape-font-specification:'Atkinson Hyperlegible Bold';fill:#000000;fill-opacity:0.981685;stroke-width:0.588"
+         x="88.771217"
+         y="106.30627">Streamin<tspan
+   style="fill:#3049b5;fill-opacity:0.981685"
+   id="tspan2" /></tspan></text>
+    <path
+       id="path3"
+       style="fill:#005baa;fill-opacity:1;stroke-width:0.582141"
+       d="m 167.46881,93.194828 a 6.3933187,6.4578938 0 0 0 -6.39341,6.457487 6.3933187,6.4578938 0 0 0 6.39341,6.458005 6.3933187,6.4578938 0 0 0 2.80861,-0.65836 l 0.66404,0.87127 h 2.99775 l -1.75906,-2.30684 a 6.3933187,6.4578938 0 0 0 1.68206,-4.364075 6.3933187,6.4578938 0 0 0 -6.3934,-6.457487 z m -0.0729,2.261878 a 4.1241105,4.1657653 0 0 1 4.12378,4.165637 4.1241105,4.1657653 0 0 1 -0.80563,2.471167 l -0.88005,-1.15445 h -2.99775 l 1.97765,2.59416 a 4.1241105,4.1657653 0 0 1 -1.418,0.25528 4.1241105,4.1657653 0 0 1 -4.12429,-4.166157 4.1241105,4.1657653 0 0 1 4.12429,-4.165637 z" />
+  </g>
+  <path
+     sodipodi:type="star"
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:4.00371;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     id="path4"
+     inkscape:flatsided="true"
+     sodipodi:sides="3"
+     sodipodi:cx="43.138733"
+     sodipodi:cy="20.66526"
+     sodipodi:r1="29.697325"
+     sodipodi:r2="14.848663"
+     sodipodi:arg1="2.0111019"
+     sodipodi:arg2="3.0582994"
+     inkscape:rounded="0"
+     inkscape:randomized="0"
+     d="M 30.481261,47.530098 26.201837,-3.728851 72.733101,18.194534 Z"
+     inkscape:transform-center-x="-1.4133906"
+     inkscape:transform-center-y="0.0015135026"
+     transform="matrix(0.18989723,0.01575149,-0.01575149,0.18989723,-4.6121428,2.1580912)" />
+  <path
+     id="rect5-0"
+     style="fill:#005baa;fill-opacity:1;stroke:none;stroke-width:1.01395;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     d="m 94.954286,2.235618 3.3533,4.514973 -3.3874,4.4788 2.35696,0.0145 3.393074,-4.48603 h -0.005 L 97.311426,2.241855 Z" />
+  <path
+     id="rect5-0-5"
+     style="fill:#005baa;fill-opacity:1;stroke:none;stroke-width:1.01395;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     d="m 98.963506,2.251565 3.353284,4.514976 -3.387384,4.4788 2.356944,0.0145 3.39308,-4.48603 h -0.005 l -3.35379,-4.516004 z" />
+</svg>

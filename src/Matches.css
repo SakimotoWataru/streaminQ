@@ -1,0 +1,218 @@
+/* Matches.css */
+/* :root {
+    --bg-color: #fff;
+    --text-color: #111;
+    --card-bg: #f2f2f2;
+    --border-color: #ccc;
+  }
+  
+  [data-theme='dark'] {
+    --bg-color: #121212;
+    --text-color: #f5f5f5;
+    --card-bg: #1e1e1e;
+    --border-color: #333;
+  } */
+  .page-header {
+    padding: 1rem 0;
+    background-color: transparent;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .logo-center-wrapper {
+    text-align: center;
+    margin-bottom: 0.5Srem;
+  }
+  
+  .logo {
+    height: 40px;
+    width: auto;
+    display: inline-block;
+  }
+  
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  .container {
+    padding: 1rem 2rem;
+  }
+  
+  /* .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--card-bg);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+  }
+  
+  .theme-toggle {
+    padding: 0.4rem 1rem;
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  } */
+  
+  .card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  
+
+
+  
+  .container {
+    padding: 1rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+.container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .banner-wrapper {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .banner {
+    max-width: 100%;
+    max-height: 400px; /* 高さを制限 */
+    object-fit: contain; /* アスペクト比を維持しつつ収める */
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  .tournament-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  .no-queue {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+  }
+  
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    text-align: center;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .stream-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  .stream-logo {
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  .stream-logo-img {
+    max-width: 100px;  /* 最大幅を指定 */
+    height: auto;
+    border-radius: 8px; /* ロゴに丸みを付ける */
+  }
+  
+  .match-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .match-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .match-item:last-child {
+    border-bottom: none;
+  }
+  
+  .round-text {
+    font-weight: 600;
+    color: #555;
+    display: block;
+    /* background-color: #007bff; */
+    
+  }
+  
+  .match-vs {
+    color: #333;
+    font-size: 0.95rem;
+  }
+  
+  .loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+  }
+  .score-info {
+    margin-top: 4px;
+    font-weight: bold;
+    color: #444;
+  }
+  
+  .error {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+  }
+  
+  .stream-info {
+    margin-top: 0.3rem;
+    font-size: 0.9rem;
+    color: #444;
+  }
+  
+  .stream-link {
+    margin-left: 0.3rem;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .stream-link:hover {
+    text-decoration: underline;
+  }
+  
+  .stream-label {
+    font-weight: 600;
+  }
+  
