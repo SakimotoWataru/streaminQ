@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { gql, useQuery } from '@apollo/client';
 import { ClipLoader } from 'react-spinners';
+import Sortable from 'react-sortablejs';
 import './Matches.css';
 
 const GET_STREAM_QUEUE = gql`
@@ -75,7 +76,14 @@ function Matches() {
   const tournament = data?.tournament;
   const banner = tournament?.images?.find((img) => img.type === 'banner')?.url;
   const icon = tournament?.images?.find((img) => img.type === 'profile')?.url;
-  const queue = tournament?.streamQueue || [];
+
+  // 配信キューを「試合単位」で平坦化
+  const flatMatches = tournament?.streamQueue?.flatMap((q) =>
+    q.sets.map((set) => ({
+      stream: q.stream,
+      set,
+    }))
+  ) || [];
 
   return (
     <div className="container">
@@ -91,65 +99,89 @@ function Matches() {
         </div>
       )}
 
-      <h2 className="title">{tournament?.name} - 配信キュー</h2>
+<h2 className="title">
+  <a
+    href={`https://www.start.gg/${slug}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="tournament-link"
+  >
+    {tournament?.name}
+  </a>{' '}
+  - Streaming Schedule
+</h2>
 
-      {queue.length === 0 ? (
+
+      {flatMatches.length === 0 ? (
         <p className="no-queue">
           ストリームキューは見つかりませんでした。<br />No stream queue found.
         </p>
       ) : (
         <div className="card-grid">
-          {queue.map((q, i) => (
-            <div key={i} className="card">
-              {q.sets.map((set) => (
-                <div key={set.id} className="match-item">
-                  <span className="round-text">{set.fullRoundText}</span>
+          {/* <Sortable
+  tag="div"
+  className="card-grid"
+  options={{
+    animation: 150,
+    ghostClass: 'sortable-ghost',
+  }}
+> */}
+          {flatMatches.map(({ stream, set }) => (
+            <div key={set.id} className="card">
+              <div className="round-text">{set.fullRoundText}</div>
 
-                  {icon && (
-                    <div className="icon-wrapper">
-                      <img src={icon} alt="Tournament Icon" className="tournament-icon" />
-                    </div>
-                  )}
-
-                  <div className="players-wrapper">
-                    {set.slots.map((s, index) => (
-                      <div key={index} className="player-info">
-                        <span className="player-name">{s.entrant?.name || '???'}</span>
-                        <span className="player-seed">Seed: {s.seed?.seedNum ?? '-'}</span>
-                        <span className="player-score">Score: {s.standing?.stats?.score?.value ?? '-'}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {q.stream?.streamName && (
-                    <div className="stream-info">
-                      <img
-                        src={getStreamLogo(q.stream.streamSource)}
-                        alt={`${q.stream.streamName} Logo`}
-                        className="stream-logo-img"
-                      />
-                      <a
-                        href={
-                          q.stream.streamSource === 'TWITCH'
-                            ? `https://twitch.tv/${q.stream.streamName}`
-                            : q.stream.streamSource === 'YOUTUBE' && q.stream.streamId
-                            ? `https://www.youtube.com/channel/${q.stream.streamId}`
-                            : '#'
-                        }
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="stream-link"
-                      >
-                        {q.stream.streamSource === 'TWITCH' && `Twitch: ${q.stream.streamName}`}
-                        {q.stream.streamSource === 'YOUTUBE' && `YouTube: ${q.stream.streamName}`}
-                        {!['TWITCH', 'YOUTUBE'].includes(q.stream.streamSource) && q.stream.streamName}
-                      </a>
-                    </div>
-                  )}
+              <div className="players">
+                <div className="player-box left">
+                  <div className="player-name">{set.slots[0]?.entrant?.name || '???'}</div>
+                  <div className="player-seed">Seed: {set.slots[0]?.seed?.seedNum ?? '-'}</div>
                 </div>
-              ))}
+
+                <div className="player-score">{set.slots[0]?.standing?.stats?.score?.value ?? '-'}</div>
+
+                <div className="icon-box">
+                  <div className="icon-image-box">
+                    {icon && (
+                      <img src={icon} alt="Tournament Icon" className="tournament-icon" />
+                    )}
+                  </div>
+                </div>
+
+                <div className="player-score">{set.slots[1]?.standing?.stats?.score?.value ?? '-'}</div>
+
+                <div className="player-box right">
+                  <div className="player-name">{set.slots[1]?.entrant?.name || '???'}</div>
+                  <div className="player-seed">Seed: {set.slots[1]?.seed?.seedNum ?? '-'}</div>
+                </div>
+              </div>
+
+              {stream?.streamName && (
+                <div className="stream-info">
+                  <div className="stream-logo">
+                    <img
+                      src={getStreamLogo(stream.streamSource)}
+                      alt={`${stream.streamName} Logo`}
+                      className="stream-logo-img"
+                    />
+                  </div>
+                  <a
+                    href={
+                      stream.streamSource === 'TWITCH'
+                        ? `https://twitch.tv/${stream.streamName}`
+                        : stream.streamSource === 'YOUTUBE' && stream.streamId
+                        ? `https://www.youtube.com/channel/${stream.streamId}`
+                        : '#'
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="stream-link"
+                  >
+                   {stream.streamName}
+                  </a>
+                </div>
+              )}
             </div>
           ))}
+                  {/* </Sortable> */}
         </div>
       )}
     </div>

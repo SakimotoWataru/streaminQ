@@ -40,27 +40,6 @@
     padding: 1rem 2rem;
   }
   
-  /* .page-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--card-bg);
-    padding: 1rem 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    border: 1px solid var(--border-color);
-  }
-  
-  .theme-toggle {
-    padding: 0.4rem 1rem;
-    background-color: transparent;
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.9rem;
-  } */
-  
   .card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -71,11 +50,11 @@
 
 
   
-  .container {
+  /* .container {
     padding: 1rem 2rem;
     max-width: 1000px;
     margin: 0 auto;
-  }
+  } */
   
 .container {
     padding: 2rem;
@@ -115,16 +94,26 @@
     color: #888;
   }
   
+  .tournament-link {
+    color: black;
+  }
+
+  .tournament-link:hover {
+    color: rgb(104, 101, 101);
+    transition: 0.5s;
+  }
   .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
   }
   
   .card {
+    width: 700px;
+    max-width: 90%;
     background: #fff;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     padding: 1rem 1.5rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
@@ -142,6 +131,7 @@
   .stream-logo {
     text-align: center;
     margin: 1rem 0;
+    margin-bottom: 0;
   }
   
   .stream-logo-img {
@@ -160,18 +150,30 @@
     padding: 0.5rem 0;
     border-bottom: 1px solid #eee;
   }
-  
+
+  .match-item,
+  .card {
+  text-align: center;
+}
+.sortable-ghost {
+  opacity: 0.4;
+}
   .match-item:last-child {
     border-bottom: none;
   }
   
   .round-text {
-    font-weight: 600;
-    color: #555;
-    display: block;
-    /* background-color: #007bff; */
-    
+    font-weight: bold;
+    color: #fff;
+    background-color: #055abb;
+    padding: 0.6rem 1.5rem;
+    border-radius: 2px;
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 0 auto 0.5rem auto;
+    text-align: center;
   }
+
   
   .match-vs {
     color: #333;
@@ -200,12 +202,12 @@
     margin-top: 0.3rem;
     font-size: 0.9rem;
     color: #444;
+    text-align: center;
   }
   
   .stream-link {
-    margin-left: 0.3rem;
-    color: #007bff;
-    text-decoration: none;
+    color: black;
+    /* text-decoration: none; */
   }
   
   .stream-link:hover {
@@ -216,3 +218,104 @@
     font-weight: 600;
   }
   
+  .players {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.player-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 80px;
+}
+
+.player-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  color: #222;
+
+  border: #055abb;
+}
+
+.player-seed {
+  font-size: 0.9rem;
+  color: white;
+  background-color: black;
+  padding: 0.1rem 1.5rem;
+  /* border-radius: 2px; */
+  display: inline-block;
+  /* margin: 0 auto 0.5rem auto; */
+}
+
+
+
+.icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-image-box {
+  width: 80px;
+  height: 80px;
+  margin: 0 0.5rem;
+}
+
+.icon-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.players {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.player-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 80px;
+}
+
+
+
+.player-score {
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 0 1rem;
+  color: #444;
+}
+
+.icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-image-box {
+  width: 80px;
+  height: 80px;
+  margin: 0 0.5rem;
+}
+
+.icon-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.stream-logo {
+  align-items: center;
+}
