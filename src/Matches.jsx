@@ -1,7 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { gql, useQuery } from '@apollo/client';
 import { ClipLoader } from 'react-spinners';
-import Sortable from 'react-sortablejs';
 import './Matches.css';
 
 const GET_STREAM_QUEUE = gql`
@@ -63,6 +62,7 @@ function Matches() {
     }
   };
 
+  // ロード中のリング
   if (loading) {
     return (
       <div className="loader-container">
@@ -73,11 +73,11 @@ function Matches() {
 
   if (error) return <p className="error">エラーが発生しました: {error.message}</p>;
 
+  // 大会バナーやアイコンを取得
   const tournament = data?.tournament;
   const banner = tournament?.images?.find((img) => img.type === 'banner')?.url;
   const icon = tournament?.images?.find((img) => img.type === 'profile')?.url;
 
-  // 配信キューを「試合単位」で平坦化
   const flatMatches = tournament?.streamQueue?.flatMap((q) =>
     q.sets.map((set) => ({
       stream: q.stream,
@@ -85,6 +85,7 @@ function Matches() {
     }))
   ) || [];
 
+  // ヘッダーを定義
   return (
     <div className="container">
       <header className="page-header">
@@ -99,6 +100,7 @@ function Matches() {
         </div>
       )}
 
+{/* 大会名を表示 */}
 <h2 className="title">
   <a
     href={`https://www.start.gg/${slug}`}
@@ -111,25 +113,20 @@ function Matches() {
   - Streaming Schedule
 </h2>
 
-
+{/* 配信キューを表示 */}
       {flatMatches.length === 0 ? (
         <p className="no-queue">
           ストリームキューは見つかりませんでした。<br />No stream queue found.
         </p>
       ) : (
         <div className="card-grid">
-          {/* <Sortable
-  tag="div"
-  className="card-grid"
-  options={{
-    animation: 150,
-    ghostClass: 'sortable-ghost',
-  }}
-> */}
+          
           {flatMatches.map(({ stream, set }) => (
             <div key={set.id} className="card">
               <div className="round-text">{set.fullRoundText}</div>
 
+              {/* 対戦カード */}
+              {/* 左側プレイヤー */}
               <div className="players">
                 <div className="player-box left">
                   <div className="player-name">{set.slots[0]?.entrant?.name || '???'}</div>
@@ -138,6 +135,7 @@ function Matches() {
 
                 <div className="player-score">{set.slots[0]?.standing?.stats?.score?.value ?? '-'}</div>
 
+              {/* 大会ロゴ */}
                 <div className="icon-box">
                   <div className="icon-image-box">
                     {icon && (
@@ -145,7 +143,7 @@ function Matches() {
                     )}
                   </div>
                 </div>
-
+              {/* 右側プレイヤー */}
                 <div className="player-score">{set.slots[1]?.standing?.stats?.score?.value ?? '-'}</div>
 
                 <div className="player-box right">
@@ -154,6 +152,7 @@ function Matches() {
                 </div>
               </div>
 
+              {/* 配信先、ロゴ表示 */}
               {stream?.streamName && (
                 <div className="stream-info">
                   <div className="stream-logo">
@@ -163,6 +162,7 @@ function Matches() {
                       className="stream-logo-img"
                     />
                   </div>
+                  
                   <a
                     href={
                       stream.streamSource === 'TWITCH'
@@ -181,7 +181,6 @@ function Matches() {
               )}
             </div>
           ))}
-                  {/* </Sortable> */}
         </div>
       )}
     </div>
