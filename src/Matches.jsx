@@ -89,7 +89,7 @@ function Matches() {
     <div className="container">
       <header className="page-header">
         <div className="logo-title-wrapper">
-          <img src="/SQlogo.svg" alt="Logo" className="logo" />
+          <img src="/SQlogo-edge.svg" alt="Logo" className="logo" />
         </div>
       </header>
 
